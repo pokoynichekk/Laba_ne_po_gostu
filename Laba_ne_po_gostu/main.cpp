@@ -11,8 +11,8 @@ int main()
     {
         std::cout << "1. Вывести все корни.\n2. Метод половинного деления.";
         std::cout << "\n3. Метод хорд.\n4. Метод Касательных";
-        std::cout << "\n5. Метод итераций.\n6. Выход.\n";
-        std::cout << "\nВыберите пункт: ";
+        std::cout << "\n5. Метод итераций.\n6. Вывести отрезки.\n";
+        std::cout << "\n7. Выход. \n\nВыберите пункт: ";
         std::cin >> menuOption;
 
         switch (menuOption)
@@ -49,7 +49,12 @@ int main()
             }
             case 6:
             {
-                delete math;
+                math->FindPoints();
+                system("pause");
+                break;
+            }
+            case 7:
+            {
                 return 0;
             }
             default:

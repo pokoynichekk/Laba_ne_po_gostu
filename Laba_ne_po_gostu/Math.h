@@ -13,6 +13,7 @@ public:
 	double SecantMethod(double x0, double x1, double eps);
 	double DichotomyMethod(double x0, double x1, double eps);
 	double IterationMethod(double x, double eps);
+	void FindPoints();
 
 private:
 	double Xmin;

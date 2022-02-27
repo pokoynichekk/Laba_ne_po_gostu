@@ -18,19 +18,50 @@ Math::~Math()
 }
 
 
+void Math::FindPoints()
+{
+    double xmin = Math::Xmin;
+    double xmax = Math::Xmax;
+    double h = Math::h;
+    double rez;
+    int counter = 1;
+    std::cout << "[" << xmin << ", ";
+    while (xmin < (xmax - h))
+    {
+        rez = xmin - 4 * (sin(xmin)) - 1;
+        xmin += h;
+        if (rez > -0.09 && rez < 0.09)
+        {
+            counter++;
+            if (counter == 2)
+            {
+                std::cout << xmin - h << "]" << std::endl;
+                counter = 0;
+            }
+            else
+            {
+                std::cout << "[" << xmin << ", ";
+            }
+        }
+    }
+}
+
+
 void Math::Find()
 {
     double xmin = Math::Xmin;
     double xmax = Math::Xmax;
     double h = Math::h;
     double rez;
-    while (xmin < (xmax-h))
+    while (xmin < (xmax))
     {
+        std::cout << "x = " << xmin;
         rez = xmin - 4 * (sin(xmin)) - 1;
         xmin += h;
-        std::cout << "x = " << xmin << "    f(x) = " << rez << std::endl;
-
+        std::cout << "    f(x) = " << rez << std::endl;
     }
+
+
 }
 
 
